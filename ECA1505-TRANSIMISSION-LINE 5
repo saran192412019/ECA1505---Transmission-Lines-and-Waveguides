@@ -1,0 +1,32 @@
+clc;
+clear;
+close;
+
+// Waveguide dimensions (in meters)
+a = 4.0 * 10^-2;
+b = 2.0 * 10^-2;
+
+// Operating frequency
+f = 8 * 10^9;
+
+// Velocity of light
+V = 3 * 10^8;
+
+// Inputs
+m = input("Enter the value of m = ");
+n = input("Enter the value of n = ");
+
+// Cut-off frequency
+fc = (V / 2) * sqrt((m / a)^2 + (n / b)^2);
+
+disp(fc * 10^-9, "Cut-off frequency (GHz) = ");
+
+// Phase velocity
+A = V / sqrt(1 - (fc / f)^2);
+
+disp(A * 10^-6, "Phase velocity (Mm/s) = ");
+
+// Group velocity
+B = V * V / A;
+
+disp(B * 10^-6, "Group velocity (Mm/s) = ");

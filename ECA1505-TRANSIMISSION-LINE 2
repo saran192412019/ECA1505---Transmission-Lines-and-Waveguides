@@ -1,0 +1,11 @@
+clc;
+clear;
+close;
+Zo = 200;
+ZR = 650 - (%i * 475);
+K = (ZR - Zo) / (ZR + Zo);
+ampK = abs(K);
+S = (1 + ampK) / (1 - ampK);
+mprintf("Reflection Coefficient (K) = %f + j(%f)\n", real(K), imag(K));
+mprintf("Magnitude of K = %.4f\n", ampK);
+mprintf("Standing Wave Ratio (SWR) = %.3f\n", S);

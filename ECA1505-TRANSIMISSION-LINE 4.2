@@ -1,0 +1,10 @@
+clear;
+clc;
+ZR = 100;
+Zo = 600;
+f = 100 * 10^6;
+lo = 300 / (f * 10^-6);
+Ls = (lo / (2 * %pi)) * atan(sqrt(ZR / Zo));
+printf("Point of attachment = %.1f cm\n", Ls * 100);
+Lt = (lo / (2 * %pi)) * (%pi + atan(sqrt(ZR * Zo) / (ZR - Zo)));
+printf("Length of the short-circuited stub = %.1f cm\n", Lt * 100);
